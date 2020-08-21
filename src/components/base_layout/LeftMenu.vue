@@ -51,7 +51,7 @@ export default {
                         },
                         {
                             label: '子导航B',
-                            routeName: 'menu2'
+                            routeName: 'tableLayout'
                         }
                     ]
                 },

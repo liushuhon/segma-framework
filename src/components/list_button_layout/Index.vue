@@ -1,4 +1,4 @@
-<!--ListTemplate.vue-->
+<!--Index.vue-->
 <template>
     <div class="list-template-wrapper">
         <div class="left">

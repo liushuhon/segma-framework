@@ -7,7 +7,7 @@ const routes = [
     {
         path: '/',
         name: 'defaultLayout',
-        component: () => import('../components/base_layout/Default.vue'),
+        component: () => import('../components/base_layout/Index.vue'),
         children: [
             {
                 path: '/menu1',
@@ -21,13 +21,13 @@ const routes = [
             },
             {
                 path: '/menu3',
-                name: 'menu3',
-                component: () => import('../views/About.vue')
+                name: 'tableLayout',
+                component: () => import('../components/table_layout/Index.vue')
             },
             {
                 path: 'list-button-layout',
                 name: 'listButtonLayout',
-                component: () => import('../components/list_button_layout/ListTemplate.vue')
+                component: () => import('../components/list_button_layout/Index.vue')
             },
         ]
     },
