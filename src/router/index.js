@@ -23,7 +23,12 @@ const routes = [
                 path: '/menu3',
                 name: 'menu3',
                 component: () => import('../views/About.vue')
-            }
+            },
+            {
+                path: 'list-button-layout',
+                name: 'listButtonLayout',
+                component: () => import('../components/list_button_layout/ListTemplate.vue')
+            },
         ]
     },
     {

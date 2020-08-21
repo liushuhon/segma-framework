@@ -42,7 +42,7 @@ export default {
         menuList() {
             return [
                 {
-                    label: '导航栏一',
+                    label: 'baseLayout模板',
                     icon: 'se-icon-f-manuallocation',
                     children: [
                         {
@@ -56,9 +56,9 @@ export default {
                     ]
                 },
                 {
-                    label: '导航栏二',
+                    label: 'listButtonLayout模板',
                     icon: 'se-icon-f-manuallocation',
-                    routeName: 'menu3'
+                    routeName: 'listButtonLayout'
                 }
             ];
         }
