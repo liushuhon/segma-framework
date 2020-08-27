@@ -1,6 +1,7 @@
-<!--Index.vue-->
+<!--表格常用布局：顶部包含搜索区域、新增按钮；下部分是table区域、翻页器区域-->
 <template>
     <div class="table-wrapper">
+        <!--顶部区域：包含搜索框，新增按钮-->
         <search-wrapper id="searchWrapper"
                         :space="5"
                         :gap="20">
@@ -48,6 +49,7 @@
                 </el-date-picker>
             </search-list-item>
         </search-wrapper>
+        <!--表格布局-->
         <div class="table-main-content">
             <el-table :data="tableData"
                       tooltip-effect="dark"
@@ -105,11 +107,6 @@ import TableDataEmpty from './TableDataEmpty';
 export default {
     name: 'TableLayout',
     components: { TableDataEmpty, TableActionButton, SearchListItem, SearchWrapper },
-    // components: {},
-    // directives: {},
-    // filters: {},
-    // model: {},
-    // props: [],
     data() {
         return {
             query: {

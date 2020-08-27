@@ -1,7 +1,9 @@
-<!-- 默认布局 -->
+<!-- 基本布局：顶部标题栏，左边导航，右边内容 -->
 <template>
     <div class="layout-default">
+        <!--顶部-->
         <base-header></base-header>
+        <!--内容区域-->
         <div class="main-wrapper has-nav">
             <div :class="['left-wrapper', isCollapse ? 'is-collapse' : 'no-collapse']">
                 <div class="collapse-btn"
@@ -9,10 +11,12 @@
                     <img src="../../assets/image/open_memu_btn.png"
                          alt="">
                 </div>
+                <!--导航-->
                 <div class="left-content">
                     <left-menu></left-menu>
                 </div>
             </div>
+            <!--主要内容区域-->
             <div :class="['content-wrapper', {'is-collapse': isCollapse}]">
                 <transition
                     name="fade-transform"

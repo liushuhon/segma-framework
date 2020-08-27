@@ -22,11 +22,6 @@ import { positionRoute, getOffspringRouteNames } from './util';
 
 export default {
     name: 'LeftMenu',
-    // components: {},
-    // directives: {},
-    // filters: {},
-    // model: {},
-    // props: [],
     data() {
         return {
             activeTreeId: ''
@@ -63,14 +58,8 @@ export default {
             ];
         }
     },
-    // watch: {},
-    // mounted() {},
-    // created() {},
-    // activated() {},
-    // beforeDestroy() {},
-    // destroyed() {},
     methods: {
-        handleNodeClick(data, node) {
+        handleNodeClick(data) {
             let { routeName, $treeNodeId } = data;
             this.activeTreeId = $treeNodeId;
             if (routeName) {
@@ -113,7 +102,6 @@ export default {
 
     /deep/ .el-tree-node.is-current {
         > .el-tree-node__content {
-            /* background: rgba(240, 246, 255, 1); */
             background: #ffffff;
 
             &:hover {
@@ -125,8 +113,6 @@ export default {
 
     .node-item {
         position: relative;
-
-        /* margin-left: 10px; */
         border-radius: 4px;
         width: 180px;
         font-size: 14px;

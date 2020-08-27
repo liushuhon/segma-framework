@@ -1,6 +1,7 @@
-<!--Index.vue-->
+<!--两栏布局：左边带按钮和列表，右边展示内容-->
 <template>
     <div class="list-template-wrapper">
+        <!--按钮和列表区域-->
         <div class="left">
             <create-button class=""
                            :commands="commands">
@@ -10,6 +11,7 @@
             </create-button>
             <div class="list-wrapper">list-area</div>
         </div>
+        <!--内容区域-->
         <div class="right">
             <router-view></router-view>
         </div>
@@ -42,14 +44,7 @@ export default {
                 }
             ];
         }
-    },
-    // watch: {},
-    // mounted() {},
-    // created() {},
-    // activated() {},
-    // beforeDestroy() {},
-    // destroyed() {},
-    methods: {}
+    }
 };
 </script>
 
