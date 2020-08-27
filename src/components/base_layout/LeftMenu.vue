@@ -46,11 +46,11 @@ export default {
                     icon: 'se-icon-f-manuallocation',
                     children: [
                         {
-                            label: '子导航A',
-                            routeName: 'menu1'
+                            label: 'tableFrom模板',
+                            routeName: 'tableAndForm'
                         },
                         {
-                            label: '子导航B',
+                            label: 'tableLayout模板',
                             routeName: 'tableLayout'
                         }
                     ]

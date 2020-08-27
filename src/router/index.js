@@ -16,8 +16,8 @@ const routes = [
             },
             {
                 path: '/menu2',
-                name: 'menu2',
-                component: () => import('../views/About.vue')
+                name: 'tableAndForm',
+                component: () => import('../components/table_and_form/Index.vue')
             },
             {
                 path: '/menu3',
