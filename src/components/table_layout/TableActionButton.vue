@@ -14,8 +14,7 @@
             <template v-else>
                 <span v-show="isShow(item.show)"
                       :key="`title_${index}`"
-                      class="title"
-                      :class="[item.type, isDisable(item.disabled) ? 'disabled' : '']"
+                      :class="['title', item.type, isDisable(item.disabled) ? 'disabled' : '']"
                       @click="item.handler(scope)">
                     {{item.title}}
                 </span>

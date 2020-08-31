@@ -29,6 +29,11 @@ const routes = [
                 name: 'listButtonLayout',
                 component: () => import('../components/list_button_layout/Index.vue')
             },
+            {
+                path: 'card-layout',
+                name: 'cardLayout',
+                component: () => import('../components/card_layout/CardLayoutDemo.vue')
+            },
         ]
     },
     {

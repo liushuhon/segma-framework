@@ -5,7 +5,7 @@
         <div class="left">
             <create-button class=""
                            :commands="commands">
-                <template slot="title">
+                <template v-slot="title">
                     <i class="iconfont se-icon-add"></i>添加监控
                 </template>
             </create-button>
@@ -19,12 +19,11 @@
 </template>
 
 <script>
-import LeftMenu from '../base_layout/LeftMenu';
 import CreateButton from './CreateButton';
 
 export default {
     name: 'ListTemplate',
-    components: { CreateButton, LeftMenu },
+    components: { CreateButton },
     computed: {
         commands() {
             return [

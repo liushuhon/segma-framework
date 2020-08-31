@@ -2,16 +2,16 @@
 <template>
     <div class="table-form-wrapper">
         <!--表单区域-->
-        <el-form :model="ruleForm"
+        <el-form ref="ruleForm"
+                 :model="ruleForm"
                  status-icon
                  :rules="rules"
-                 ref="ruleForm"
                  label-width="100px">
             <el-form-item label="密码"
                           prop="pass">
-                <el-input type="password"
+                <el-input v-model="ruleForm.pass"
+                          type="password"
                           size="small"
-                          v-model="ruleForm.pass"
                           autocomplete="off"></el-input>
             </el-form-item>
         </el-form>

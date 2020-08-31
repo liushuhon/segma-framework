@@ -54,6 +54,11 @@ export default {
                     label: 'listButtonLayout模板',
                     icon: 'se-icon-f-manuallocation',
                     routeName: 'listButtonLayout'
+                },
+                {
+                    label: 'cardLayout模板',
+                    icon: 'se-icon-f-manuallocation',
+                    routeName: 'cardLayout'
                 }
             ];
         }

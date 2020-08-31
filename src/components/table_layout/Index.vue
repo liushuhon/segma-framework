@@ -5,7 +5,7 @@
         <search-wrapper id="searchWrapper"
                         :space="5"
                         :gap="20">
-            <template slot="button">
+            <template v-slot:button>
                 <el-button type="primary"
                            size="small">新增
                 </el-button>
@@ -51,48 +51,55 @@
         </search-wrapper>
         <!--表格布局-->
         <div class="table-main-content">
-            <el-table :data="tableData"
-                      tooltip-effect="dark"
-                      @sort-change="headerClick">
-                <el-table-column
-                    prop="date"
-                    sortable="custom"
-                    show-overflow-tooltip
-                    label="日期"
-                    width="180">
-                </el-table-column>
-                <el-table-column
-                    prop="name"
-                    label="姓名"
-                    width="180">
-                </el-table-column>
-                <el-table-column
-                    prop="address"
-                    label="地址">
-                </el-table-column>
-                <el-table-column label="操作"
-                                 fixed="right"
-                                 width="230">
-                    <template slot-scope="scope">
-                        <table-action-button :scope="scope"
-                                             :actions="actions"></table-action-button>
+            <adaptive-table :page-size.sync="query.pageSize">
+                <el-table :data="tableData"
+                          tooltip-effect="dark"
+                          @sort-change="headerClick">
+                    <el-table-column
+                        prop="date"
+                        sortable="custom"
+                        show-overflow-tooltip
+                        label="日期"
+                        width="180">
+                    </el-table-column>
+                    <el-table-column
+                        prop="name"
+                        label="姓名"
+                        width="180">
+                    </el-table-column>
+                    <el-table-column
+                        prop="address"
+                        label="地址">
+                    </el-table-column>
+                    <el-table-column label="操作"
+                                     fixed="right"
+                                     width="230">
+                        <template v-slot="scope">
+                            <table-action-button :scope="scope"
+                                                 :actions="actions"></table-action-button>
+                        </template>
+                    </el-table-column>
+                    <template v-slot:empty>
+                        <table-data-empty tip="无数据，请新增"
+                                          :isDataEmpty="isDataEmpty">
+                        </table-data-empty>
                     </template>
-                </el-table-column>
-                <template slot="empty">
-                    <table-data-empty tip="无数据，请新增"
-                                      :isDataEmpty="isDataEmpty">
-                    </table-data-empty>
+                </el-table>
+                <!--翻页器-->
+                <template v-slot:pager>
+                    <el-pagination :page-size.sync="query.pageSize"
+                                   :current-page="query.currPage"
+                                   :total="total"
+                                   :hide-on-single-page="true"
+                                   layout="total,slot,prev, pager, next,jumper"
+                                   background=""
+                                   @current-change="currentChange">
+                        <span class="pager-slot">
+                            每页{{query.pageSize}}条
+                        </span>
+                    </el-pagination>
                 </template>
-            </el-table>
-            <!--翻页器-->
-            <el-pagination :page-size.sync="query.pageSize"
-                           :current-page="query.currPage"
-                           :total="total"
-                           :hide-on-single-page="true"
-                           layout="jumper, prev, pager, next"
-                           background=""
-                           @current-change="currentChange">
-            </el-pagination>
+            </adaptive-table>
         </div>
     </div>
 </template>
@@ -103,10 +110,11 @@ import SearchListItem from './SearchListItem';
 import TableActionButton from './TableActionButton';
 import { tablePageSize } from './util';
 import TableDataEmpty from './TableDataEmpty';
+import AdaptiveTable from './AdaptiveTable';
 
 export default {
     name: 'TableLayout',
-    components: { TableDataEmpty, TableActionButton, SearchListItem, SearchWrapper },
+    components: { AdaptiveTable, TableDataEmpty, TableActionButton, SearchListItem, SearchWrapper },
     data() {
         return {
             query: {
@@ -119,7 +127,7 @@ export default {
                 endTime: null
             },
             time: [],
-            total: 10,
+            total: 20,
             tableData: [],
             isDataEmpty: true
         };
