@@ -29,6 +29,11 @@ const routes = [
                 name: 'cardLayout',
                 component: () => import('../components/card_layout/CardLayoutDemo.vue')
             },
+            {
+                path: 'bread-crumb-layout',
+                name: 'breadCrumbLayout',
+                component: () => import('../components/bread_crumb_layout/Index.vue')
+            }
         ]
     }
 ];
